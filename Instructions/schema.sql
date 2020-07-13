@@ -60,9 +60,10 @@ select * from dept_manager;
 
 CREATE TABLE "salary" (
     "emp_no" INT   NOT NULL,
-    "salary" money   NOT NULL,
+    "salary" INT   NOT NULL,
 	foreign key (emp_no) references employee(emp_no)
 );
+
 
 --check
 select * from salary;
@@ -70,6 +71,7 @@ select * from salary;
 --correct employee table
 ALTER TABLE "employee" ADD CONSTRAINT "fk_employee_emp_title" FOREIGN KEY("emp_title")
 REFERENCES "title" ("title_id");
+
 
 --1. List the following details of each employee: employee number, last name, first name, sex, and salary.
 SELECT employee.emp_no, employee.last_name, employee.first_name, employee.sex, salary.salary
